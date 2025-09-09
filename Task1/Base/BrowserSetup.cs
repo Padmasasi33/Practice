@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,8 @@ namespace Task1.Base
     public class BrowserSetup
     {
         protected IWebDriver driver;
+        private DefaultWait<IWebDriver> _wait;
+
         [SetUp]
         public void SetUp()
         {
@@ -20,7 +23,7 @@ namespace Task1.Base
             driver.Url = "https://www.flipkart.com/";
 
         }
-
+       
         [TearDown]
         public void TearDown()
         {
